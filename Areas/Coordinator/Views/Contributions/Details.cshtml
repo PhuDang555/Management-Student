@@ -1,0 +1,145 @@
+﻿@model TCS2010PPTG4.Models.Contribution
+
+@{
+    ViewData["Title"] = "Details";
+    var comments = (List<Comment>)ViewData["Comments"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .overflow {
+            overflow: scroll;
+            width: 1000px;
+            height: 300px;
+            background: white;
+        }
+
+        body {
+            background: linear-gradient(0.25turn, #ebf8e1, #4fd18e, #ebf8e1);
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        select {
+            padding: 5px;
+        }
+
+        * {
+            margin: 5px;
+        }
+
+        .button:hover {
+            background-color: #3e8e41
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        textarea {
+            width: 800px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Detail Contributions </h1>
+
+    <div class="container">
+        <div class="row">
+            <form asp-action="Edit">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th> @Html.DisplayNameFor(model => model.Status)</th>
+                            <th></th>
+                            <th></th>
+                            <th>  @Html.DisplayNameFor(model => model.Contributor)</th>
+                            <th></th>
+                            <th></th>
+                            <th>@Html.DisplayNameFor(model => model.Topic)</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.Status)</td>
+                            <td></td>
+                            <td></td>
+                            <td>@Html.DisplayFor(model => model.Contributor.Email)</td>
+                            <td></td>
+                            <td></td>
+                            <td>@Html.DisplayFor(model => model.Topic.Title)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <form asp-action="Mark">
+        <input type="hidden" name="contributionId" value="@Model.Id" />
+        <select asp-for="Status" asp-items="Html.GetEnumSelectList<ContributionStatus>()" name="contributionStatus"></select>
+        <button style="padding: 5px 10px; font-size: 20px; text-align: center; cursor: pointer; outline: none; color: #fff;
+         background-color: #4CAF50; border: none; border-radius: 15px; box-shadow: 0 5px #999; margin-bottom: 20px;" type="submit">
+            Mark
+        </button>
+    </form>
+
+    @foreach (var file in Model.Files)
+    {
+        <div>
+            <a href="@file.URL" download="@file.URL">
+                @System.IO.Path.GetFileName(file.URL);
+            </a>
+        </div>
+    }
+    <div class="overflow">
+        @if (comments != null)
+        {
+            foreach (var comment in comments)
+            {
+                <div>
+                    @comment.User.Email (@comment.Date) : @comment.Content
+                </div>
+            }
+        }
+    </div>
+    <form asp-action="comment">
+        <input type="hidden" name="contributionId" value="@Model.Id" />
+        <textarea name="commentContent"></textarea>
+        <p></p>
+        <button style="padding: 5px 10px; font-size: 20px; text-align: center; cursor: pointer; outline: none; color: #fff;
+          background-color: #4CAF50; border: none; border-radius: 15px; box-shadow: 0 5px #999;" type="submit">
+            Comment
+        </button>
+    </form>
+    <p></p>
+    <div>
+        <a class="btn btn-warning" asp-area="Coordinator" asp-controller="Topics" asp-action="Index" asp-route-id="@Model.Id">Save</a> |
+        <a class="btn btn-danger" asp-area="Coordinator" asp-controller="Topics" asp-action="Index" asp-route-topicId="@Model.Id">Back to List</a>
+    </div>
+</body>
+</html>

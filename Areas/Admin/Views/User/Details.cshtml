@@ -1,0 +1,154 @@
+﻿@model TCS2010PPTG4.Models.CUser
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Details";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body {
+            background: linear-gradient(0.25turn, #ebf8e1, #4fd18e, #ebf8e1);
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Detail Profile </h1>
+
+    <p></p>
+    <div class="container">
+        <div class="row">
+
+            <table class="table table-dark table-hover">
+                <tr>
+                    <th colspan="2">
+                        Profile
+                    </th>
+                </tr>
+
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.FirstName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.LastName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Address)
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Department)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Department.Name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NormalizedUserName)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.NormalizedUserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Email)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NormalizedEmail)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.NormalizedEmail)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PasswordHash)
+                        </th>
+                        <td style="word-break: break-word;">
+                            @Html.DisplayFor(model => model.PasswordHash)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SecurityStamp)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.SecurityStamp)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConcurrencyStamp)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.ConcurrencyStamp)
+                        </td>
+                    </tr>
+
+                    
+                </tbody>
+            </table>
+        </div>
+        <a class="btn btn-danger" asp-action="Index"><i class="fas fa-arrow-left"></i> Back to List</a>
+    </div>
+
+</body>
+</html>

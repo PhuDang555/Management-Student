@@ -1,0 +1,117 @@
+﻿@using TCS2010PPTG4
+@model PaginatedList<TCS2010PPTG4.Models.CUser>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body {
+            background: linear-gradient(0.25turn, #ebf8e1, #4fd18e, #ebf8e1);
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>List of User</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register"><i class="fas fa-user-plus"></i> Create new</a>
+    </p>
+    <div class="container">
+        <form asp-action="Index" method="get" class="mb-3">
+            <div class="d-flex">
+                <div class="ml-auto p-2">
+                    Search user: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                    <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+                    <a asp-action="Index" class="btn btn-default"><i class="fas fa-undo-alt"></i></a>
+                </div>
+            </div>
+        </form>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        <a>User Name</a>
+                    </th>
+                    <th>
+                        <a>First Name</a>
+                    </th>
+                    <th>
+                        <a>Last Name</a>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @foreach (var item in Model)
+            {
+    <tr>
+        <td>
+            <a asp-action="Details" asp-route-id="@item.Id" class="">@Html.DisplayFor(modelItem => item.UserName)</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            <a asp-action="Assign" asp-route-id="@item.Id" class="btn btn-primary " title="Assign"><i class="fa fa-user-alt"></i></a>
+            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary " title="Edit"><i class="fa fa-user-edit"></i></a>
+            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"title="Delete"><i class="fa fa-user-alt-slash" style="color:white;"></i></a>
+        </td>
+    </tr>
+             }
+            </tbody>
+        </table>
+    </div>
+
+
+    @{ var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : ""; }
+    <div class="mb-3">
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex - 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @prevDisabled">
+            <i class="fas fa-arrow-circle-left" style="font-size: 36px"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @nextDisabled">
+            <i class="fas fa-arrow-circle-right" style="font-size: 36px"></i>
+        </a>
+    </div>
+</body>
+</html>

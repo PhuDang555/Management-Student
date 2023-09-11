@@ -1,0 +1,243 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        /* Make the image fully responsive */
+
+        p.thick {
+            font-weight: bold;
+        }
+
+        p.thicker {
+            font-weight: 900;
+        }
+        /*style hình động từ dưới lên*/
+        .container {
+            position: relative;
+            width: 100%;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+            height: 100%;
+        }
+
+        .text {
+            white-space: nowrap;
+            color: black;
+            font-size: 30px;
+            position: absolute;
+            overflow: hidden;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            font-family: Corbel Light;
+            font-weight: bold;
+        }
+
+        .huy {
+            background-color: ghostwhite;
+            width: 100%;
+        }
+
+
+       
+    </style>
+
+</head>
+<body>
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/Images/background1.jpg" alt="Img" width="2000" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="/Images/background2.jpg" alt="Img" width="2000" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="/Images/background3.jpg" alt="Img" width="2000" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="/Images/background4.jpg" alt="Img" width="2000" height="500">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <br />
+    <div class="top-left aos-init aos-animate" data-aos="fade-up">
+        <table border="0">
+            <tbody>
+                <tr>
+                    <td style="width:45%;padding-left: 15px;vertical-align: middle;">
+                        <h3 style="text-align: center;font-size: 40px;font-weight:bold;font-family:Corbel Light;">ABOUT</h3>
+                        <h4 style="text-align: center;font-size: 30px;font-weight:bold;font-family:Corbel Light;">Who We Are </h4><br>
+                        <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                            This is the place collecting student contributions for an annual university magazine in a large university. All Faculties have a Marketing Coordinator responsible for managing the process for their Faculties and students have the opportunity to submit one or more articles as Word documents to the journal. All students can also upload. High quality images, for example photos. All students must agree to the Terms and Conditions before they can submit. Faculty Marketing Coordinator, who must provide a comment within 14 days.<br>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="container">
+                <img src="/Images/IT.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div class="text"></div>
+                    <br />
+                    <br />
+                    <br />
+                    <h3 style="text-align: center;font-size: 40px;font-weight:bold;font-family:Corbel Light;">IT</h3>
+                    <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                        Windows Multi-Platform Application and Game Programming Contest for students and students who love IT in Ho Chi Minh City.<br>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container">
+                <img src="/Images/business.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div class="text"></div>
+                    <br />
+                    <br />
+                    <br />
+                    <h3 style="text-align: center;font-size: 40px;font-weight:bold;font-family:Corbel Light;">BUSINESS</h3>
+                    <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                        Windows Multi-Platform Application and Game Programming Contest for students and students who love BUSINESS in Ho Chi Minh City.<br>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container">
+                <img src="/Images/graphicdesign.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div class="text"></div>
+                    <br />
+                    <br />
+                    <br />
+                    <h3 style="text-align: center;font-size: 40px;font-weight:bold;font-family:Corbel Light;">GRAPHIC DESIGN </h3>
+                    <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                        Windows Multi-Platform Application and Game Programming Contest for students and students who love GRAPHIC DESIGN in Ho Chi Minh City.<br>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <center>  <h2 style="text-align: center;font-size: 60px;font-weight:bold;font-family:Corbel Light;">BEST STUDENT </h2></center>
+    <br />
+    <br />
+    <div class=" huy">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <Center> <img src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" alt="Avatar" style="width:200px"></Center>
+                <h4 style="text-align: center;font-size: 30px;font-weight:bold;font-family:Corbel Light;">PHAM MANH HAI </h4>
+                <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                    IT Developer - Vingroup - valedictorian of IT major 2019 <br />
+                    ______________________<br />
+                    <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                        At GreenTea, not only can I learn specialties but also create and share the most "crazy" ideas.<br>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <Center> <img src="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/3_avatar-512.png" alt="Avatar" style="width:200px"></Center>
+                <h4 style="text-align: center;font-size: 30px;font-weight:bold;font-family:Corbel Light;">MAI XUAN DUY </h4>
+                <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                    IT Manger - FPT Company - valedictorian of IT major 2020<br />
+                    ______________________<br />
+                    <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                        GreenTea not only gives me useful knowledge and skills, but also provides extremely dedicated support and advice to start a business, and at the same time introduces many attractive job opportunities.<br>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <Center> <img src="https://laxanh.net/wp-content/uploads/2019/12/146-512.png" alt="Avatar" style="width:200px"></Center>
+                <h4 style="text-align: center;font-size: 30px;font-weight:bold;font-family:Corbel Light;">NGO TRIEU HAO </h4>
+                <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                    CEO - Zroot Game revenue 250 million / month - 2018 - 2024<br />
+                    ______________________<br />
+                    <div style="text-align: center ;line-height: 1.70;font-size: 20px;font-family:Corbel Light;">
+                        GreenTea's faculty are very dedicated and enthusiastic. They not only provide useful and profound knowledge but also strongly inspire us.<br>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+
+   
+
+</body>
+</html>

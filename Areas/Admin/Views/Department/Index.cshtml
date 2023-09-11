@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TCS2010PPTG4.Models.Department>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        
+        body {
+            background: linear-gradient(0.25turn, #ebf8e1, #4fd18e, #ebf8e1);
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Department</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+    </p>
+    <div class="container"> 
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                            <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a> 
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

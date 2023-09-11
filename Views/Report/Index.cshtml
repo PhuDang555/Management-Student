@@ -1,0 +1,100 @@
+﻿@{
+
+}
+<div class="container border-info text-sm-center text-white">
+    <div class="row">
+        <div class="col-xl-4 table-borderless align-middle bg-secondary">
+            <h3 class="mb-4"></h3>
+            <div>IT</div>
+        </div>
+        <div class="col-xl-4 table-bordered align-middle bg-info">
+            <h3 class="mb-4">@ViewBag.TotalCoorOfIT</h3>
+            <div>Total IT Coors</div>
+        </div>
+        <div class="col-xl-4 table-bordered align-middle bg-primary">
+            <h3 class="mb-4">@ViewBag.TotalStudentOfIT</h3>
+            <div>Total IT Students</div>
+        </div>
+
+
+        <div class="col-xl-4 table-bordered align-middle bg-secondary">
+            <h3 class="mb-4"></h3>
+            <div>BA</div>
+        </div>
+        <div class="col-xl-4 table-bordered align-middle bg-info">
+            <h3 class="mb-4">@ViewBag.TotalCoorOfBA</h3>
+            <div>Total BA Coors</div>
+        </div>
+        <div class="col-xl-4 table-bordered align-middle bg-primary">
+            <h3 class="mb-4">@ViewBag.TotalStudentOfBA</h3>
+            <div>Total BA Students</div>
+        </div>
+
+
+        <div class="col-xl-4 table-bordered align-middle bg-secondary">
+            <h3 class="mb-4"></h3>
+            <div>Design</div>
+        </div>
+        <div class="col-xl-4 table-bordered align-middle bg-info">
+            <h3 class="mb-4">@ViewBag.TotalCoorOfDesign</h3>
+            <div>Total Design Coors</div>
+        </div>
+        <div class="col-xl-4 table-bordered align-middle bg-primary">
+            <h3 class="mb-4">@ViewBag.TotalStudentOfDesign</h3>
+            <div>Total Design Students</div>
+        </div>
+
+
+        <div class="col-xl-4 table-bordered align-middle bg-secondary">
+            <h3 class="mb-4">@ViewBag.TotalDepartment</h3>
+            <div>Total Departments</div>
+        </div>
+        <div class="col-xl-4 table-bordered align-middle bg-info">
+            <h3 class="mb-4">@ViewBag.TotalCoor</h3>
+            <div>Total Coors</div>
+        </div>
+        <div class="col-xl-4 table-bordered align-middle bg-primary">
+            <h3 class="mb-4">@ViewBag.TotalStudent</h3>
+            <div>Total Students</div>
+        </div>
+    </div>
+</div>
+<div id="chart"></div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+    var test;
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            url: '/api/report/manager_contribution',
+            success: function (result) {
+                test = result;
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(function () { drawChart(result); });
+            }
+        });
+    });
+
+    function drawChart(result) {
+        var chartwidth = $(".container").width() / 2;
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'DepartmentName');
+        data.addColumn('number', 'TotalContribution');
+
+        var dataArray = [];
+        $.each(result, function (i, obj) { dataArray.push([obj.departmentName, obj.totalContribution]); });
+        data.addRows(dataArray);
+
+        var options = {
+            legend: 'Contribution of Department',
+            width: chartwidth,
+            height: chartwidth
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart'));
+        chart.draw(data, options);
+    }
+</script>

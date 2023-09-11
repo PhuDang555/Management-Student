@@ -1,0 +1,331 @@
+﻿@{
+    ViewData["Title"] = "GreenTea Blog";
+}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/site2.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            justify-content: center;
+            background: linear-gradient(0.25turn, #ebf8e1, #4fd18e, #ebf8e1);
+        }
+
+        h1 {
+            top: 10%;
+            font-size: 60px;
+            color: white;
+            text-align: center;
+        }
+
+        .box {
+            width: 375px;
+            height: 75px;
+            background-color: white;
+            border-radius: 30px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            margin: auto;
+        }
+
+            .box > i {
+                font-size: 20px;
+                color: #777;
+            }
+
+            .box > input {
+                flex: 1;
+                height: 35px;
+                border: none;
+                outline: none;
+                font-size: 18px;
+                padding-left: 10px;
+                margin: auto;
+                width: 375px;
+            }
+
+
+
+        .fakeimg {
+            background-image: url(https://picresize.com/images/rsz_117-nen-chon-giay-da-bong-nike-hay-adidas-1.jpg);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: none;
+            padding: 20px;
+            margin-top: 0px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .leftcolumn {
+            float: left;
+            width: 100%;
+            height: 1000px;
+            background: #333;
+            margin-top: 20px;
+        }
+
+
+        .fakeimg0 {
+            background-color: #333;
+            width: 100%;
+            padding: 20px;
+        }
+
+            .fakeimg0 h2 {
+                color: white;
+            }
+
+        p {
+            font-size: 14px;
+            color: white;
+            padding-left: 10px;
+            margin: auto;
+        }
+
+
+
+        .post-list .row > div {
+            display: inline-block;
+            vertical-align: top;
+            float: none;
+        }
+
+        .post-item {
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 3px;
+            transition: .3s;
+        }
+
+        a {
+            text-decoration: none;
+            color: #183186;
+        }
+
+        .post-item__img, .post-item__img img {
+            width: 100%;
+        }
+        img {
+            border-style: none;
+        }
+        .featured-posts__item {
+            padding: 15px 0;
+            border-bottom: 1px solid hsla(0,2%,79%,.2);
+            min-height: 100px;
+        }
+        .post-item__time {
+            font-size: 1rem;
+            line-height: 1.54;
+            float: left;
+            color: #525252;
+        }
+        .post-item__arrow {
+            float: right;
+            margin: 13px 0;
+        }
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="name-blog">
+        <h1>GreenTea Blog</h1>
+    </div>
+
+    <div class="box">
+        <i class="fa fa-search" aria-hidden="true"></i>
+
+        <input type="text" name="">
+
+    </div>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <div class="fakeimg0">
+                    <h1>Blog</h1>
+                    <div class="gallery">
+                        <img src="https://nordiccoder.com/app/uploads/2021/01/127-business-analysis.png" width="400" height="400">
+                        <div class="post-entry">
+                            <h2>Top những khoá học về business analysis</h2>
+                        </div>
+                        <p>
+                            Business Analysis kết hợp các kỹ năng dữ liệu và sự nhạy bén trong kinh doanh để mang lại lợi ích cho các tổ chức dựa trên phân tích.
+                            Dưới đây là 10 chứng chỉ đáng chú ý để giúp bạn tiến lên với tư cách là một Business Analyst.
+                        </p>
+                        <br />
+                        <br />
+                    </div>
+
+                    <div class="gallery">
+                        <img src="https://nordiccoder.com/app/uploads/2020/08/laptop-do-hoa-2020-tren-25-trieu-jpeg-1024x1014.jpg" width="400" height="400">
+                        <div class="post-entry">
+                            <h2>Cách Lựa Chọn Laptop Cho Dân Đồ Họa</h2>
+                        </div>
+                        <p>
+                            Nếu bạn là dân thiết kế đồ họa, dân xây dựng kiến trúc, người chuyên dựng phim video, người tạo game 3D, thì bài viết này là dành riêng cho bạn, vì ngành của bạn đặc biệt hơn các ngành khác khi chọn mua Laptop.
+                            Dưới đây là một số kinh nghiệm hữu ích cho những bạn nào muốn chọn dòng laptop đồ họa chất lượng đúng công năng sử dụng mà bạn phải nắm rõ.
+                        </p>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="gallery">
+                        <img src="https://nordiccoder.com/app/uploads/2020/08/business-people-working-laptop-development_1262-18907.jpg" width="400" height="400">
+                        <div class="post-entry">
+                            <h2>10 Điều Cần Biết Trước Khi Bắt Đầu Nghề DevOps</h2>
+                        </div>
+                        <p>
+                            DevOps là sự kết hợp của Phát Triển (development) & Vận Hành (operation). Nghề DevOps cũng được nhiều bạn quan tâm và tìm hiểu lộ trình cũng như cơ hội.
+                            DevOps hỗ trợ thiết lập một mối quan hệ rõ ràng giữa vận hành & phát triển trong mảng CNTT và đặc biệt nhấn mạnh vào việc cải thiện khả năng hợp tác & trao đổi giữa 2 bộ phận này.
+                        </p>
+                        <br />
+                        <br />
+                    </div>
+                    <section class="post-list" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <div class="container">
+                            <div class="post-list__grid row">
+                                <div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/cach-lua-chon-laptop-cho-dan-do-hoa/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/lua-chon-laptop-cho-designer-375x234-c-default.jpg" alt="Cách Lựa Chọn Laptop Cho Dân Đồ Họa - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Blog</span></div><h3 class="post-item__title">Cách Lựa Chọn Laptop Cho Dân Đồ Họa</h3><div class="post-item__desc">Nếu bạn là dân thiết kế đồ họa, dân xây dựng kiến trúc, người chuyên dựng phim video, người tạo game 3D, thì bài viết này là dành riêng cho bạn, vì ngành của bạn đặc biệt hơn các ngành khác khi chọn mua Laptop.&nbsp;Dưới đây là một số kinh nghiệm hữu ích cho những […]</div><p class="post-item__time">19/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/10-dieu-devops-can-biet-truoc-khi-bat-dau/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/10-dieu-can-biet-truoc-khi-bat-dau-nghe-devops-375x234-c-default.jpg" alt="10 Điều Cần Biết Trước Khi Bắt Đầu Nghề DevOps - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Back-end</span></div><h3 class="post-item__title">10 Điều Cần Biết Trước Khi Bắt Đầu Nghề DevOps</h3><div class="post-item__desc">DevOps là sự kết hợp của Phát Triển (development) &amp; Vận Hành (operation). Nghề DevOps cũng được nhiều bạn quan tâm và tìm hiểu lộ trình cũng như cơ hội. DevOps hỗ trợ thiết lập một mối quan hệ rõ ràng giữa vận hành &amp; phát triển trong mảng CNTT và đặc biệt nhấn mạnh […]</div><p class="post-item__time">19/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/15-chung-chi-data-science/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/96-chung-chi-data-science-375x234-c-default.jpg" alt="15 chứng chỉ data science - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Blog</span></div><h3 class="post-item__title">15 chứng chỉ data science</h3><div class="post-item__desc">Bạn đang muốn trở thành nhà khoa học dữ liệu?&nbsp;Kiếm được một trong những chứng chỉ data science này sẽ giúp bạn nổi bật trong những nghề nghiệp hot nhất trong lĩnh vực CNTT. Nhà khoa học dữ liệu&nbsp;là một trong những công việc hot nhất trong lĩnh vực CNTT.&nbsp;Các công ty ngày càng phụ […]</div><p class="post-item__time">19/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/laptop-cho-dan-thiet-ke/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/15-laptop-cho-dan-designer-375x234-c-default.jpg" alt="Laptop cho dân Designer, tổng hợp các mẫu phù hợp - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Blog</span></div><h3 class="post-item__title">Laptop cho dân Designer, tổng hợp các mẫu phù hợp</h3><div class="post-item__desc">Designer hay người thiết kế nói chung đang là nghề được nhiều bạn trẻ hướng đến ngày nay, giới trẻ thường có xu hướng thích tìm hiểu về lĩnh vực mà mình yêu thích. Vì thế các bạn trẻ sẽ tìm kiếm các loại laptop cho dân Designer, có rất nhiều thông tin bao gồm […]</div><p class="post-item__time">18/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/bluehost/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/bluehost-review-2015-375x234-c-default.jpg" alt="BlueHost: Tổng quan toàn tập BlueHost 2020 - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Bảo Mật</span></div><h3 class="post-item__title">BlueHost: Tổng quan toàn tập BlueHost 2020</h3><div class="post-item__desc">Bluehost là gì? Bluehost là một trong những nhà cung cấp&nbsp;dịch vụ web hosting&nbsp;lớn nhất trong ngành. Hơn nữa, đây là một trong số ít dịch vụ được đề xuất bởi WordPress – phần mềm quản lý nội dung lớn nhất hiện nay. Bluehost cung cấp các gói chia sẻ,&nbsp;WordPress, VPS và các gói hosting […]</div><p class="post-item__time">17/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/hosting-tot-nhat/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/hosting-375x234-c-default.png" alt="Các bạn đã hiểu gì về Hosting ? Top những hosting tốt nhất hiện nay - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Bảo Mật</span></div><h3 class="post-item__title">Các bạn đã hiểu gì về Hosting ? Top những hosting tốt nhất hiện nay</h3><div class="post-item__desc">Các website ngày nay trở thành một phần không thể thiếu trong việc marketing online của các công ty, và để có một website hoàn chỉnh thì hosting được xem như là một chìa khóa quan trọng. Nhưng bạn đã biết hosting là gì chưa? Như nào là hosting tốt nhất? Cách chọn hosting tốt […]</div><p class="post-item__time">14/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/sach-cong-nghe-thong-tin/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/sach-cntt-nen-doc-375x234-c-default.jpg" alt="Sách công nghệ thông tin (CNTT) nên đọc - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Cộng đồng</span></div><h3 class="post-item__title">Sách công nghệ thông tin (CNTT) nên đọc</h3><div class="post-item__desc">Ngành Công nghệ thông tin (CNTT) là gì? Trước khi tìm hiểu về những đầu sách công nghệ thông tin (CNTT) thì trước tiên chúng ta phải tìm hiểu CNTT là gì? CNTT (viết tắt là: Information Technology hay IT) là một ngành kỹ thuật sử dụng máy tính và phần mềm máy tính để […]</div><p class="post-item__time">14/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/cach-dinh-huong-nghe-nghiep-va-dam-phan-muc-luong-phu-hop/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/template-thumb-3-375x234-c-default.jpg" alt="Cách định hướng nghề nghiệp và đàm phán mức lương phù hợp - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Blog</span></div><h3 class="post-item__title">Cách định hướng nghề nghiệp và đàm phán mức lương phù hợp</h3><div class="post-item__desc">Việc định hướng nghề nghiệp của bản thân là rất cần thiết, đó sẽ là bước đầu cho sự thành công của mọi người. Đồng thời việc đàm phán mức lương với nhà tuyển dụng cũng không kém phần quan trọng. Bài viết này sẽ giúp mọi người nhìn nhận và đưa ra được những […]</div><p class="post-item__time">13/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><div class="post-list__grid__cell col-md-4">
+                                    <div class="post-item">
+                                        <a href="https://nordiccoder.com/blog/lua-chon-dung-dan-cua-database-trong-flutter/">
+                                            <div class="post-item__img"><img src="https://nordiccoder.com/app/uploads/2020/08/su-lua-chon-dung-dan-ve-database-trong-flutter-375x234-c-default.jpg" alt="Sự lựa chọn đúng đắn về database trong Flutter - Nordic Coder"></div><div class="post-item__content">
+                                                <div class="post-item__cat"><span style="color:#DE3535;">Blog</span></div><h3 class="post-item__title">Sự lựa chọn đúng đắn về database trong Flutter</h3><div class="post-item__desc">Có rất nhiều tùy chọn hiện nay khi nói đến database trong Flutter. Có 3 loại phù hợp như sau: Relational: đây là những cơ sở dữ liệu truyền thống. Không chỉ lưu trữ dữ liệu mà còn có mối liên quan giữa các dữ liệu. SQLite là một ví dụ về sự liên quan […]</div><p class="post-item__time">13/08/2020</p><div class="post-item__arrow">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4476 3.42403C11.216 3.18434 10.8305 3.18434 10.5909 3.42403C10.3593 3.65563 10.3593 4.04109 10.5909 4.27214L14.9351 8.61635H0.599778C0.265608 8.61689 0 8.8825 0 9.21667C0 9.55084 0.265608 9.82508 0.599778 9.82508H14.9351L10.5909 14.1612C10.3593 14.4009 10.3593 14.7869 10.5909 15.0179C10.8305 15.2576 11.2165 15.2576 11.4476 15.0179L16.8202 9.64531C17.0599 9.41371 17.0599 9.02826 16.8202 8.7972L11.4476 3.42403Z" fill="#348DB9"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

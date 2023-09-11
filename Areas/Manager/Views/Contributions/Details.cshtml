@@ -1,0 +1,114 @@
+﻿@model TCS2010PPTG4.Models.Contribution
+
+@{
+    ViewData["Title"] = "Details";
+    var comments = (List<Comment>)ViewData["Comments"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body {
+            background: linear-gradient(0.25turn, #ebf8e1, #4fd18e, #ebf8e1);
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1> Detail Contributions </h1>
+
+    <div class="container">
+        <div class="row">
+            <form asp-action="Edit">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th> @Html.DisplayNameFor(model => model.Status)</th>
+
+                            <th>@Html.DisplayFor(model => model.Status)</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.Contributor)</td>
+
+                            <td>@Html.DisplayFor(model => model.Contributor.Id)</td>
+
+                            <td>@Html.DisplayNameFor(model => model.Topic)</td>
+
+                            <td>@Html.DisplayFor(model => model.Topic.Id)</td>
+                            <td>
+                                <div>
+                                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+                                    <a class="btn btn-danger" asp-action="Index">Back to List</a>
+                                </div>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <form asp-action="Mark">
+        <input type="hidden" name="contributionId" value="@Model.Id" />
+        <select asp-for="Status" asp-items="Html.GetEnumSelectList<ContributionStatus>()" name="contributionStatus"></select>
+        <button type="submit">Mark</button>
+    </form>
+
+    @foreach (var file in Model.Files)
+    {
+        <div>
+            <a href="@file.URL" download="@file.URL">
+                @System.IO.Path.GetFullPath(file.URL);
+            </a>
+        </div>
+    }
+
+    @if (comments != null)
+    {
+        foreach (var comment in comments)
+        {
+            <div>
+                @comment.User.Email (@comment.Date) : @comment.Content
+            </div>
+        }
+    }
+    <form asp-action="comment">
+        <input type="hidden" name="contributionId" value="@Model.Id" />
+        <textarea name="commentContent"></textarea>
+        <button type="submit">Comment</button>
+    </form>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+        <a asp-area="Manager" asp-controller="Contributions" asp-action="Index" asp-route-topicId="@Model.Id">Back</a>
+    </div>
+</body>
+</html>
+

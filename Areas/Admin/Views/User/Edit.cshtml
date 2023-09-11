@@ -1,0 +1,148 @@
+﻿@model TCS2010PPTG4.Models.CUser
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body {
+            background: linear-gradient(0.25turn, #ebf8e1, #4fd18e, #ebf8e1);
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h5 class="mt-4 mb-4 text-center">Edit user (@Html.DisplayFor(model => model.UserName)) </h5>
+
+    <div class="container">
+        <div class="row">
+            <form asp-action="Edit" class="row" method="post" novalidate="novalidate">
+                <table class="table table-dark table-hover">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="Id" />
+                                <input type="hidden" asp-for="UserName" />
+                                <input type="hidden" asp-for="NormalizedUserName" />
+                                <input type="hidden" asp-for="Email" />
+                                <input type="hidden" asp-for="NormalizedEmail" />
+                                <input type="hidden" asp-for="PasswordHash" />
+                                <input type="hidden" asp-for="SecurityStamp" />
+                                <input type="hidden" asp-for="ConcurrencyStamp" />
+                                <input type="hidden" asp-for="PhoneNumber" />
+                                <input type="hidden" asp-for="PhoneNumberConfirmed" />
+                             
+                            </td>
+                            <td>
+                                <h5 class="mb-4">Profile</h5>
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label"></label>
+                                    <input asp-for="FirstName" class="form-control" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LastName" class="control-label"></label>
+                                    <input asp-for="LastName" class="form-control" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Number" class="control-label"></label>
+                                    <input asp-for="Number" class="form-control" />
+                                    <span asp-validation-for="Number" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Address"></label>
+                                    <input asp-for="Address" class="form-control" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DepartmentId"></label>
+                                    <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.Departments"></select>
+                                    <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <h5 class="mb-4">Account Information</h5>
+
+                                
+                                <div class="form-group">
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PasswordHash" class="control-label"></label>
+                                    <input asp-for="PasswordHash" class="form-control" />
+                                    <span asp-validation-for="PasswordHash" class="text-danger"></span>
+                                </div>
+                                <div class="mt-4 mb-4 justify-content-center">
+                                    <a asp-action="Index" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back</a>
+                                    <input type="submit" value="Save" class="btn btn-primary" />
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+</body>
+</html>
+
+   

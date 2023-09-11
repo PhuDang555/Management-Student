@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GreenTea</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <style>
+        footer {
+            color: grey;
+        }
+
+            footer p, a {
+                font-size: 12px;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            footer h6 {
+                font-family: 'Playfair Display', serif;
+                margin-bottom: 40px;
+                position: relative;
+            }
+
+                footer h6:after {
+                    position: absolute;
+                    content: "";
+                    background: grey;
+                    width: 12%;
+                    height: 1px;
+                    left: 0;
+                    bottom: -20px;
+                }
+
+        .btn-footer {
+            color: grey;
+            text-decoration: none;
+            border: 1px solid;
+            border-radius: 43px;
+            font-size: 13px;
+            padding: 7px 30px;
+            line-height: 47px;
+        }
+
+            .btn-footer:hover {
+                text-decoration: none;
+            }
+
+        .form-footer input[type="text"] {
+            border: none;
+            border-radius: 16px 0 0 16px;
+            outline: none;
+            padding-left: 10px;
+        }
+
+        .placeholder {
+            font-size: 10px;
+            padding-left: 10px;
+            font-style: italic;
+        }
+
+        .form-footer input[type="button"] {
+            border: none;
+            background: #232323;
+            margin-left: -5px;
+            color: #fff;
+            outline: none;
+            border-radius: 0 16px 16px 0;
+            padding: 2px 12px;
+        }
+
+        .social {
+            font-size: 22px;
+            padding: 10px 15px;
+        }
+
+        .fa {
+            
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+            padding: 10px 0px;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            padding: 10px 0px;
+            color: white;
+        }
+
+        footer ul li {
+            list-style: none;
+            display: block;
+        }
+
+        footer ul {
+            padding-left: 0;
+        }
+
+            footer ul li a {
+                text-decoration: none;
+                color: grey;
+                text-decoration: none;
+            }
+
+        a:hover {
+            text-decoration: none;
+            color: #f5f5f5 !important;
+        }
+
+        .logo-part {
+            border-right: 1px solid grey;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+        <div class="page">
+            <header tabindex="0" class="pb-3"></header>
+            <div id="nav-container">
+                <div class="button" tabindex="0" >
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+                <div id="nav-content" tabindex="0">
+                    <ul>
+                        <li><a class="asideAnchor" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a class="asideAnchor" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a class="asideAnchor" asp-area="" asp-controller="Report" asp-action="Index">Report</a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Admin" asp-controller="User" asp-action="Index">User</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Admin" asp-controller="Department" asp-action="Index">Department</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Admin" asp-controller="Role" asp-action="Index">Role</a>
+                                </li>
+                            }
+
+                            if (User.IsInRole("Coordinator"))
+                            {
+                                <li class="asideList">
+                                    <a class="asideAnchor" asp-area="Coordinator" asp-controller="Topics" asp-action="Index">Topic</a>
+                                </li>
+                            }
+
+                            if (User.IsInRole("Student"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Student" asp-controller="Topic" asp-action="Index">Topic</a>
+                                </li>
+                            }
+
+                            if (User.IsInRole("Manager"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Manager" asp-controller="Topics" asp-action="Index">Topic</a>
+                                </li>
+                            }
+                        }
+                
+
+                        <partial name="_LoginPartial" />
+                    </ul>
+
+                </div>
+            </div>
+            <main>
+                <div class="content">
+                    <img src="https://www.brithotel.fr/images/resized/situations_grd/photos/region-centre.jpg" style="width: 100%;">
+                    <p></p>
+                    <div class="container">
+                        <main role="main" class="pb-3">
+                            @RenderBody()
+                        </main>
+                    </div>
+
+                    <footer class="container-fluid bg-dark py-5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                            <div class="logo-part">
+                                                <h2> About Company</h2>
+                                                <br />
+                                                <br />
+                                                <p>Facility 1: No. 142-146 Pham Phu Thu - Ward 4 - District 6</p>
+                                                <p>Facility 2: 205 Nguyen Xi, Ward 26, Binh Thanh</p>
+                                                <p>Phone: 028.7300.2266</p>
+                                                <p>Hotline: 0933.108.554 | 0971,294,545</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 px-4">
+                                            <h6> Address</h6>
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.873984461329!2d106.6420883144405!3d10.74419426272664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752e639bf01243%3A0x91e3ddf3263c7e5e!2zMTQyIFBo4bqhbSBQaMO6IFRo4bupLCBQaMaw4budbmcgNCwgUXXhuq1uIDYsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1614675996119!5m2!1svi!2s"
+                                                    width="230" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6 px-4">
+                                            <h6> Help us</h6>
+                                            <div class="row ">
+                                                <div class="col-md-6">
+                                                    <ul>
+                                                        <li> <a href="#"> Home</a> </li>
+                                                        <li> <a href="#"> About</a> </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6 px-4">
+                                                    <ul>
+                                                        <li> <a href="#"> Contact</a> </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 ">
+                                            <h6> Social Network</h6>
+                                            <div class="social">
+                                                <a href="#" class="fa fa-facebook" style="font-size:30px; width:40px"></a>
+                                                <a href="#" class="fa fa-instagram" style="font-size:30px; width:40px"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </main>
+        </div>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

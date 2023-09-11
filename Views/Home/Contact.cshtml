@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png" />
+    <style>
+       
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+        .hao {
+            border-radius: 5px;
+            background-color: lightblue;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="container mt-3">
+        <div class="media border p-3">
+            <img src="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/7_avatar-512.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+            <div class="media-body">
+                <h4>John Doe <small><i>Posted on February 28, 2021</i></small></h4>
+                <p>The posts were very helpful for me personally, and everyone has been learning a lot.</p>
+                <p>I wish the website more attention and contribute more good articles in the near future.</p>
+            </div>
+        </div>
+        <div class="media border p-3">
+            <img src="https://cdn.iconscout.com/icon/free/png-512/avatar-373-456325.png" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+            <div class="media-body">
+                <h4>Jane Doe <small><i>Posted on February 20, 2021</i></small></h4>
+                <p>Through this, I make friends and learn from other students. I want to thank the Admin who maintains the page so well.</p>
+                <p>I will always be a hard fan of this page.</p>
+            </div>
+        </div>
+        <div class="media border p-3">
+            <img src="https://cdn3.iconfinder.com/data/icons/business-avatars/128/avatar-10-512.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+            <div class="media-body">
+                <h4>Timmy Tran <small><i>Posted on February 1, 2021</i></small></h4>
+                <p>I want to thank the students of the school. Have posted these very useful posts.</p>
+                <p>Besides, I personally introduced a lot of people to see and learn from you.</p>
+            </div>
+        </div>
+        <div class="media border p-3">
+            <img src="https://cdn3.iconfinder.com/data/icons/business-avatars/128/avatar-03-512.png" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+            <div class="media-body">
+                <h4>Tommy Phan <small><i>Posted on February 3, 2021</i></small></h4>
+                <p>Sometimes, the students write wrong, but most of them are perfect. That can be ignored because you are so cute ^^</p>
+                <p>Will always support your posts !!!!</p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="hao">
+        <center>
+            <h3>Contact to us </h3>
+        </center>
+        <form action="/action_page.php">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">VietNam</option>
+                <option value="usa">USA</option>
+            </select>
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <center> <button type="button" class="btn btn-success">Success</button></center>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+</body>
+</html>
